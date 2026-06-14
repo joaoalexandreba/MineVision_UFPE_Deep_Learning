@@ -1,1 +1,6 @@
-
+ultralytics
+opencv-python
+numpy
+matplotlib
+roboflow
+jupyter
