@@ -24,7 +24,7 @@ Esta seção resume o atendimento às 4 entregas incrementais solicitadas pelo p
 | **Entrega 2** | **Uso Adequado de NumPy**<br>• Manipulação de matrizes e vetorização<br>• Divisão estratificada 80/20 com semente fixa<br>• Estatística descritiva e arrays | • Módulo `src/preprocessing.py`: função `split_dataset` com `np.random.RandomState(42)` e indexação de arrays<br>• Módulo `src/evaluation.py`: operações vetorizadas para cálculo de médias, desvios e IC 95% |
 | **Entrega 3** | **Implementação em PyTorch**<br>• Carregamento de dados com `Dataset` PyTorch<br>• Pré-processamento e normalização (`torchvision`)<br>• Treinamento do modelo na GPU/CPU (`nn.Module`)<br>• Impressão do erro de treino/teste por época<br>• Salvamento do modelo treinado (`best.pt`) | • Módulo `src/preprocessing.py`: classe `HarshDataset(Dataset)` e pipeline `get_transforms()` com normalização ImageNet<br>• Módulo `src/models.py`: arquitetura PyTorch `HarshNeuralFeatureExtractor(nn.Module)` e YOLOv11<br>• Módulo `src/training.py`: `train_model` com log de losses (Box, Cls, DFL) e salvamento em `best.pt` |
 | **Entrega 4** | **Testes Automatizados com `unittest` & Requisitos (GR4ML)**<br>• Suíte de testes unitários em pasta dedicada<br>• Testes de carregamento, tensores e split<br>• Evidência de execução de todos os testes<br>• Documento de requisitos (GR4ML) | • Pasta `tests/` (`test_dataset.py`, `test_preprocessing.py`, `test_evaluation.py`, `test_inference.py`)<br>• Suíte automatizada com 10 testes passando (`Ran 10 tests in 0.168s - OK`)<br>• Documento de Requisitos (GR4ML): [GR4ML_Monitoramento de Operação de Caminhões em Mina.pdf](docs/GR4ML_Monitoramento%20de%20Operação%20de%20Caminhões%20em%20Mina.pdf) |
-| **Documentação & Final** | **Requisitos, Arquitetura e Apresentação**<br>• Requisitos de software<br>• Arquitetura em camadas<br>• Apresentação e Notebook didático | • `docs/requisitos.md` (Requisitos RF/RNF e matriz de rastreabilidade)<br>• `docs/arquitetura.md` (Diagrama em camadas e fluxo de dados)<br>• Notebook didático: `EntregaFinal.ipynb` / script `EntregaFinal.py` |
+| **Documentação & Final** | **Requisitos, Arquitetura e Apresentação**<br>• Requisitos de software<br>• Arquitetura em camadas<br>• Apresentação e Notebook didático | • `docs/requisitos.md` (Requisitos RF/RNF e matriz de rastreabilidade)<br>• `docs/arquitetura.md` (Diagrama em camadas e fluxo de dados)<br>• Notebook didático: `notebooks/EntregaFinal.ipynb` |
 
 ---
 
@@ -219,6 +219,15 @@ uv run python main.py --skip-train
 # Realizar inferência em imagem avulsa (RF08)
 uv run python main.py --skip-train --infer data/yolo_harsh/images/test/exemplo.jpg
 ```
+
+### 5.4 Execução Interativa via Notebook (Google Colab / Jupyter)
+Para quem desejar testar, explorar os dados e reproduzir o pipeline de forma visual e interativa célula a célula, disponibilizamos o notebook didático completo em **`notebooks/EntregaFinal.ipynb`**:
+* **Suporte ao Google Colab**: O notebook possui detecção automática de ambiente (`google.colab`), instalando as dependências necessárias (`!pip install -q ultralytics roboflow`) e aproveitando aceleração gratuita por GPU (T4/V100).
+* **Execução Local**: Pode ser aberto localmente via Jupyter Lab / VSCode:
+  ```bash
+  uv run jupyter lab notebooks/EntregaFinal.ipynb
+  ```
+* **Didática e Visualização**: Contém explicações passo a passo, gráficos interativos com Seaborn, renderização de máscaras de segmentação e execução em tempo real da suíte de testes unitários.
 
 ---
 
