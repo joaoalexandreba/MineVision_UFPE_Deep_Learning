@@ -1,7 +1,7 @@
 task: segment
 mode: train
 model: yolo11n-seg.pt
-data: /home/hugo/Estudos/MBA/UFPE-Especializacao-DeepLearning/Engenharia-de-Software-para-IA-e-Frameworks-Profundos/TrabalhoFinal/yolo_harsh/data.yaml
+data: /home/hugo/Estudos/MBA/UFPE-Especializacao-DeepLearning/Engenharia-de-Software-para-IA-e-Frameworks-Profundos/TrabalhoFinal/EntregaFinal/data/yolo_harsh/data.yaml
 epochs: 50
 time: null
 patience: 100
@@ -12,7 +12,7 @@ save_period: -1
 cache: false
 device: ''
 workers: 8
-project: /home/hugo/Estudos/MBA/UFPE-Especializacao-DeepLearning/Engenharia-de-Software-para-IA-e-Frameworks-Profundos/TrabalhoFinal/resultados
+project: /home/hugo/Estudos/MBA/UFPE-Especializacao-DeepLearning/Engenharia-de-Software-para-IA-e-Frameworks-Profundos/TrabalhoFinal/EntregaFinal/resultados
 name: treino_yolov11_harsh
 exist_ok: true
 pretrained: true
@@ -113,4 +113,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: tracktrack.yaml
-save_dir: /home/hugo/Estudos/MBA/UFPE-Especializacao-DeepLearning/Engenharia-de-Software-para-IA-e-Frameworks-Profundos/TrabalhoFinal/resultados/treino_yolov11_harsh
+save_dir: /home/hugo/Estudos/MBA/UFPE-Especializacao-DeepLearning/Engenharia-de-Software-para-IA-e-Frameworks-Profundos/TrabalhoFinal/EntregaFinal/resultados/treino_yolov11_harsh
