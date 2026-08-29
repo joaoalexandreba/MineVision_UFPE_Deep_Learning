@@ -1,0 +1,23 @@
+# Ambientes virtuais Python
+.venv/
+venv/
+env/
+ENV/
+
+# Caches e arquivos temporários Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
+.pytest_cache/
+
+# Dados brutos volumosos de imagens (baixados automaticamente pelo load_dataset)
+data/harsh_dataset/
+data/yolo_harsh/images/
+data/yolo_harsh/labels/
+*.cache
+
+# Checkpoints intermediários e temporários
+*.tmp
+*.log
+runs/

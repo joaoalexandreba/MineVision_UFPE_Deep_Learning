@@ -1,0 +1,7 @@
+path: /home/hugo/Estudos/MBA/UFPE-Especializacao-DeepLearning/Engenharia-de-Software-para-IA-e-Frameworks-Profundos/TrabalhoFinal/EntregaFinal/data/yolo_harsh
+train: images/train
+val: images/test
+test: images/test
+
+nc: 2
+names: ['bed', 'coal']
