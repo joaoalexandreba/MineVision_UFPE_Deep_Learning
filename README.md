@@ -137,7 +137,11 @@ EntregaFinal/
 ├── docs/                       # 📄 Documentação técnica e de engenharia
 │   ├── Instrucoes/             (PDFs de orientações da disciplina)
 │   ├── requisitos.md           (Especificação formal de requisitos RF/RNF)
-│   └── arquitetura.md          (Decisões arquiteturais e diagramas em camadas)
+│   ├── arquitetura.md          (Decisões arquiteturais e diagramas em camadas)
+│   └── GR4ML_Monitoramento...  (Documento formal de requisitos GR4ML)
+│
+├── notebooks/                  # 📓 Notebooks de experimentação e didáticos
+│   └── EntregaFinal.ipynb      (Notebook interativo e didático de ponta a ponta)
 │
 ├── src/                        # 🧠 Código-Fonte Modularizado (Engenharia de Software)
 │   ├── __init__.py
