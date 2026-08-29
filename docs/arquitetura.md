@@ -4,7 +4,7 @@
 
 O sistema adota uma arquitetura em **Pipeline de Processamento em Camadas**, onde cada etapa possui responsabilidade única, alta coesão e baixo acoplamento.
 
-```
+```text
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
 │   Roboflow API  │ ──> │   src/data.py    │ ──> │   data/raw/     │
 └─────────────────┘     └──────────────────┘     └─────────────────┘
@@ -64,8 +64,12 @@ O sistema adota uma arquitetura em **Pipeline de Processamento em Camadas**, ond
    * *Justificativa*: Evita desbalanceamento de classes entre treino e teste e garante **100% de reprodutibilidade** experimental.
 
 3. **Avaliação Estatística com Intervalos de Confiança (t-Student 95%)**:
-   * *Decisão*: Implementação de inferência estatística com $t$-Student via `scipy.stats.t.ppf` com cálculo de erro padrão:
-     $$\text{IC}_{95\%} = \bar{X} \pm t_{\alpha/2, \nu} \cdot \left(\frac{s}{\sqrt{n}}\right)$$
+   * *Decisão*: Implementação de inferência estatística com t-Student via `scipy.stats.t.ppf` com cálculo de erro padrão:
+
+```math
+IC_{95\%} = \bar{X} \pm t_{\alpha/2, \nu} \cdot \left(\frac{s}{\sqrt{n}}\right)
+```
+
    * *Justificativa*: Fornece rigor estatístico além de métricas pontuais, comprovando a estabilidade da convergência do modelo.
 
 4. **Testabilidade e Cobertura Automatizada (`tests/`)**:
